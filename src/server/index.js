@@ -26,7 +26,6 @@ app.get('/', function(req,res){
 
 app.post('/test', async (req, res) => {
    const urlFromUser = req.body.url;
-   console.log(`${baseUrl}&key=${apiKey}&url=${urlFromUser}&lang=en`)
    const apiCall = await fetch(`${baseUrl}&key=${apiKey}&txt=${urlFromUser}&lang=en`, { method: 'POST' });
    try {
     const data = await apiCall.json();
