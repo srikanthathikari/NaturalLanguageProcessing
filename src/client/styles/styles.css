@@ -1,0 +1,15 @@
+body{
+    background-color: wheat;
+}
+
+#heading1 {
+  padding-top: 5vh;
+  text-align: center;
+}
+
+#url{
+    margin-top: 2vh;
+    margin-left: 30vw;
+    width: 40%;
+}
+
