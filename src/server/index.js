@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const fetch = require('node-fetch');
+const path = require('path');
 const baseUrl = "https://api.meaningcloud.com/sentiment-2.1";
 const apiKey = "e3282b598f09c1b60a45324ed49186de";
 
@@ -19,12 +20,12 @@ app.listen(port, function () {
 })
 
 app.get('/', function(req,res){
-    // res.sendFile('dist/index.html', { root: '.' });
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
-    
+    res.sendFile('./dist/client/src/views/index.html', { root: '.' });
+    // res.sendFile(__dirname + 'dist/index.html');  
 })
 
-app.post('/test', async (req, res) => {
+app.get('/test', async (req, res) => {
+    console.log('I am getting a req');
    const urlFromUser = req.body.url;
    const apiCall = await fetch(`${baseUrl}&key=${apiKey}&txt=${urlFromUser}&lang=en`, { method: 'POST' });
    try {

@@ -1,21 +1,16 @@
 
+// let fetch = require('node-fetch');
 
-const handleSubmit = document.getElementById('submit').addEventListener("click", function (event){
+async function handleSubmit(event){
+    
+    console.log('I am sending  a req');
     event.preventDefault();
     let formText = document.getElementById('url').value;
-    fetch('http://localhost:8080/test',{
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({url: formText})
-    })
+   await fetch('http://localhost:8080/test',  {formText})
     .then((response) => response.json())
     .then((response) => {
         console.log(response)
     })
-})
 
-
+}
 export {handleSubmit}
-
-

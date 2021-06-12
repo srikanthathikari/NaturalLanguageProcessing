@@ -5,7 +5,6 @@
     <meta charset='utf-8'>
     <title>Natural Language Processing</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="../styles/styles.css">
     
 </head>
 
@@ -16,7 +15,7 @@
     <section>
         <form>
             <input placeholder="Enter a value" id="url" value="">
-            <input type="submit" id="submit" >
+            <input type="submit" id="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
             <h3 id="results"></h3>
         </form>
     </section>
