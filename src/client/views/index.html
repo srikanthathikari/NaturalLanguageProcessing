@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <title>Natural Language Processing</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    
+
 </head>
 
 <body>
@@ -13,12 +13,23 @@
     <h1 id="heading1">Natural Language Processing</h1>
 
     <section>
-        <form>
-            <input placeholder="Enter a value" id="url" value="">
-            <input type="submit" id="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
-            <h3 id="results"></h3>
+        <form onsubmit="return Client.handleSubmit(event)">
+            <input id="url" value="" placeholder="http://example.com">
+            <input type="submit" id="submit" onclick="return Client.handleSubmit(event)"
+                onsubmit="return Client.handleSubmit(event)">
         </form>
     </section>
+
+    <section class = "resultsPrimary">
+        <strong><div class="update" id="results">Analysis results:</div></strong>
+        <div id="model"></div>
+        <div id="score_tag"></div>
+        <div id="agreement"></div>
+        <div id="subjectivity"></div>
+        <div id="confidence"></div>
+        <div id="irony"></div>
+    </section>
+    
 </body>
 
 

@@ -20,12 +20,10 @@ app.listen(port, function () {
 })
 
 app.get('/', function(req,res){
-    res.sendFile('./dist/client/src/views/index.html', { root: '.' });
-    // res.sendFile(__dirname + 'dist/index.html');  
+    res.sendFile('dist/index.html', { root: '.' });
 })
 
 app.get('/test', async (req, res) => {
-    console.log('I am getting a req');
    const urlFromUser = req.body.url;
    const apiCall = await fetch(`${baseUrl}&key=${apiKey}&txt=${urlFromUser}&lang=en`, { method: 'POST' });
    try {
